@@ -1,0 +1,15 @@
+﻿@model Finalpro.Models.HistorialMedico
+
+<h1>Editar Historial Médico</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="IdHistorial" />
+
+    <div class="form-group">
+        <label>Id Paciente</label>
+        <input type="text" class="form-control" asp-for="IdPaciente" />
+    </div>
+  
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>

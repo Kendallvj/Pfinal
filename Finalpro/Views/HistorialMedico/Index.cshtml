@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Finalpro.Models.HistorialMedico>
+
+<h1>Listado de Historiales Médicos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Id Paciente</th>
+            <th>Teléfono Paciente</th>
+            <th>Email Paciente</th>
+            <th>Enfermedades Preexistentes</th>
+            <th>Alergias Paciente</th>
+            <th>Medicamentos Paciente</th>
+            <th>Otros Antecedentes Médicos</th>
+            <th>Tipo Sanguíneo</th>
+            <th>Historial Cirugías</th>
+            <th>Última Revisión</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var historial in Model)
+        {
+            <tr>
+                <td>@historial.IdHistorial</td>
+                <td>@historial.IdPaciente</td>
+                <td>@historial.TelefonoPaciente</td>
+                <td>@historial.EmailPaciente</td>
+                <td>@historial.EnfermedadesPreexistentes</td>
+                <td>@historial.AlergiasPaciente</td>
+                <td>@historial.MedicamentosPaciente</td>
+                <td>@historial.OtrosAntecedentesMedicos</td>
+                <td>@historial.TipoSanguineo</td>
+                <td>@historial.HistorialCirugias</td>
+                <td>@historial.UltimaRevision.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@historial.IdHistorial">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@historial.IdHistorial">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@historial.IdHistorial">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

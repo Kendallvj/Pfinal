@@ -1,0 +1,23 @@
+﻿@model Finalpro.Models.HistorialMedico
+
+<h1>Confirmar Eliminación</h1>
+
+<div>
+    <h4>Id: @Model.IdHistorial</h4>
+    <h4>Id Paciente: @Model.IdPaciente</h4>
+    <h4>Teléfono Paciente: @Model.TelefonoPaciente</h4>
+    <h4>Email Paciente: @Model.EmailPaciente</h4>
+    <h4>Enfermedades Preexistentes: @Model.EnfermedadesPreexistentes</h4>
+    <h4>Alergias Paciente: @Model.AlergiasPaciente</h4>
+    <h4>Medicamentos Paciente: @Model.MedicamentosPaciente</h4>
+    <h4>Otros Antecedentes Médicos: @Model.OtrosAntecedentesMedicos</h4>
+    <h4>Tipo Sanguíneo: @Model.TipoSanguineo</h4>
+    <h4>Historial Cirugías: @Model.HistorialCirugias</h4>
+    <h4>Última Revisión: @Model.UltimaRevision.ToShortDateString()</h4>
+   
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdHistorial" />
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button> |
+    <a asp-action="Index">Cancelar</a>
+</form>

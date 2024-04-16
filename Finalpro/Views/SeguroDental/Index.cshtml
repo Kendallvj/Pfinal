@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Finalpro.Models.SeguroDental>
+
+<h1>Listado de Seguros Dentales</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre Seguro</th>
+            <th>Nombre Asegurado</th>
+            <th>Número de Póliza</th>
+            <th>Cobertura Restriccionada</th>
+            <th>Estado de Pago</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var seguro in Model)
+        {
+            <tr>
+                <td>@seguro.IdSeguro</td>
+                <td>@seguro.NombreSeguro</td>
+                <td>@seguro.NombreAsegurado</td>
+                <td>@seguro.NumeroPoliza</td>
+                <td>@seguro.CoberturaRestric</td>
+                <td>@seguro.EstadoPago</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@seguro.IdSeguro">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@seguro.IdSeguro">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@seguro.IdSeguro">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

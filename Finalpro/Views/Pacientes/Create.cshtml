@@ -1,0 +1,13 @@
+﻿@model Finalpro.Models.Pacientes
+
+<h1>Nuevo Paciente</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" asp-for="NombrePaciente" />
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

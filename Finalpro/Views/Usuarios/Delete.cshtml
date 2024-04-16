@@ -1,0 +1,14 @@
+﻿@model Finalpro.Models.usuarios
+
+<h1>Confirmar Eliminación</h1>
+
+<div>
+    <h4>Id: @Model.IdUsuario</h4>
+    <h4>Usuario: @Model.Usuario</h4>
+    
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdUsuario" />
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button> |
+    <a asp-action="Index">Cancelar</a>
+</form>

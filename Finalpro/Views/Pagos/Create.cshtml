@@ -1,0 +1,13 @@
+﻿@model Finalpro.Models.Pagos
+
+<h1>Nuevo Pago</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label>Id Cita</label>
+        <input type="number" class="form-control" asp-for="IdCita" />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

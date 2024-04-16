@@ -1,0 +1,15 @@
+﻿@model Finalpro.Models.Radiologia
+
+<h1>Confirmar Eliminación</h1>
+
+<div>
+    <h4>Id: @Model.IdRadiologia</h4>
+    <h4>Nombre Paciente: @Model.NombrePaciente</h4>
+    <h4>Edad Paciente: @Model.EdadPaciente</h4>
+  
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdRadiologia" />
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button> |
+    <a asp-action="Index">Cancelar</a>
+</form>

@@ -1,0 +1,15 @@
+﻿@model Finalpro.Models.SeguroDental
+
+<h1>Confirmar Eliminación</h1>
+
+<div>
+    <h4>Id: @Model.IdSeguro</h4>
+    <h4>Nombre Seguro: @Model.NombreSeguro</h4>
+    <h4>Nombre Asegurado: @Model.NombreAsegurado</h4>
+    
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdSeguro" />
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button> |
+    <a asp-action="Index">Cancelar</a>
+</form>

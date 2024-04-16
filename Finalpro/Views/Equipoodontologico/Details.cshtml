@@ -1,0 +1,20 @@
+﻿@model Finalpro.Models.EquipoOdontologico
+
+<h1>Detalles del Equipo Odontológico</h1>
+
+<div>
+    <h4>Id: @Model.IdEquipoOdonto</h4>
+    <h4>Nombre Material: @Model.NombreMaterial</h4>
+    <h4>Id Proveedor: @Model.IdProveedor</h4>
+    <h4>Cantidad Stock: @Model.CantidadStock</h4>
+    <h4>Estado Equipo: @Model.EstadoEquipo</h4>
+    <h4>Fecha Adquisición: @Model.FechaAdquisicion.ToShortDateString()</h4>
+    <h4>Costo: @Model.Costo</h4>
+    <h4>Área Equipo: @Model.AreaEquipo</h4>
+    <h4>Último Mantenimiento: @Model.UltimoMantenimiento.ToShortDateString()</h4>
+    
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.IdEquipoOdonto">Editar</a> |
+    <a asp-action="Index">Volver al Listado</a>
+</p>

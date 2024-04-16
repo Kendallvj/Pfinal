@@ -1,0 +1,15 @@
+﻿@model Finalpro.Models.Citas
+
+<h1>Confirmar Eliminación</h1>
+
+<div>
+    <h4>Id: @Model.IdCita</h4>
+    <h4>Id Paciente: @Model.IdPaciente</h4>
+    <h4>Fecha Cita: @Model.FechaCita.ToShortDateString()</h4>
+  
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdCita" />
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button> |
+    <a asp-action="Index">Cancelar</a>
+</form>

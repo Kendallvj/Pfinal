@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Finalpro.Models.Empleados>
+
+<h1>Listado de Empleados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cargo</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Seguro</th>
+            <th>Fecha Ingreso</th>
+            <th>Salario</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empleado in Model)
+        {
+            <tr>
+                <td>@empleado.IdEmpleado</td>
+                <td>@empleado.NombreEmpleado</td>
+                <td>@empleado.ApellidoEmpleado</td>
+                <td>@empleado.CargoEmpleado</td>
+                <td>@empleado.TelefonoEmpleado</td>
+                <td>@empleado.EmailEmpleado</td>
+                <td>@empleado.SeguroEmpleado</td>
+                <td>@empleado.FechaIngreso.ToShortDateString()</td>
+                <td>@empleado.Salario</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@empleado.IdEmpleado">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@empleado.IdEmpleado">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@empleado.IdEmpleado">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

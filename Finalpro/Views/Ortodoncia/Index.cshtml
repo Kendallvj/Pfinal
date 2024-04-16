@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Finalpro.Models.Ortodoncia>
+
+<h1>Listado de Tratamientos de Ortodoncia</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id Paciente</th>
+            <th>Nombre Paciente</th>
+            <th>Edad Paciente</th>
+            <th>Seguro Paciente</th>
+            <th>Estado Paciente</th>
+            <th>Id Empleado</th>
+            <th>Inicio Tratamiento</th>
+            <th>Tipo Ortodóncico</th>
+            <th>Número Alineadores</th>
+            <th>Fecha Cambio</th>
+            <th>Citas Requeridas</th>
+            <th>Id Equipo Odontológico</th>
+            <th>Complicaciones</th>
+            <th>Notas Adicionales</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ortodoncia in Model)
+        {
+            <tr>
+                <td>@ortodoncia.IdPaciente</td>
+                <td>@ortodoncia.NombrePaciente</td>
+                <td>@ortodoncia.EdadPaciente</td>
+                <td>@ortodoncia.SeguroPaciente</td>
+                <td>@ortodoncia.EstadoPaciente</td>
+                <td>@ortodoncia.IdEmpleado</td>
+                <td>@ortodoncia.InicioTratamiento</td>
+                <td>@ortodoncia.TipoOrtodoncico</td>
+                <td>@ortodoncia.NumeroAlineadores</td>
+                <td>@ortodoncia.FechaCambio</td>
+                <td>@ortodoncia.CitasRequeridas</td>
+                <td>@ortodoncia.IdEquipoOdonto</td>
+                <td>@ortodoncia.Complicaciones</td>
+                <td>@ortodoncia.NotasAdicio</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@ortodoncia.IdPaciente">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@ortodoncia.IdPaciente">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@ortodoncia.IdPaciente">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+﻿@model Finalpro.Models.Pacientes
+
+<h1>Editar Paciente</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="IdPaciente" />
+
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" asp-for="NombrePaciente" />
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>

@@ -1,0 +1,14 @@
+﻿@model Finalpro.Models.Citas
+
+<h1>Detalles de la Cita</h1>
+
+<div>
+    <h4>Id: @Model.IdCita</h4>
+    <h4>Id Paciente: @Model.IdPaciente</h4>
+    <h4>Fecha Cita: @Model.FechaCita.ToShortDateString()</h4>
+    <!-- Agrega más detalles según sea necesario -->
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.IdCita">Editar</a> |
+    <a asp-action="Index">Volver al Listado</a>
+</p>

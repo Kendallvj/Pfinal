@@ -1,0 +1,19 @@
+﻿@model Finalpro.Models.usuarios
+
+<h1>Editar Usuario</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="IdUsuario" />
+
+    <div class="form-group">
+        <label>Usuario</label>
+        <input type="text" class="form-control" asp-for="Usuario" />
+    </div>
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" class="form-control" asp-for="Contraseña" />
+    </div>
+   
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>

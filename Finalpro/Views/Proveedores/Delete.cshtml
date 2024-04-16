@@ -1,0 +1,16 @@
+﻿@model Finalpro.Models.Proveedores
+
+<h1>Confirmar Eliminación</h1>
+
+<div>
+    <h4>Id: @Model.IdProveedor</h4>
+    <h4>Nombre: @Model.NombreProveedor</h4>
+    <h4>Teléfono: @Model.TelefonoProveedor</h4>
+    <h4>Email: @Model.EmailProveedor</h4>
+   
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdProveedor" />
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button> |
+    <a asp-action="Index">Cancelar</a>
+</form>

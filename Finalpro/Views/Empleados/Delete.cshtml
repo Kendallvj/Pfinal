@@ -1,0 +1,21 @@
+﻿@model Finalpro.Models.Empleados
+
+<h1>Confirmar Eliminación</h1>
+
+<div>
+    <h4>Id: @Model.IdEmpleado</h4>
+    <h4>Nombre: @Model.NombreEmpleado</h4>
+    <h4>Apellido: @Model.ApellidoEmpleado</h4>
+    <h4>Cargo: @Model.CargoEmpleado</h4>
+    <h4>Teléfono: @Model.TelefonoEmpleado</h4>
+    <h4>Email: @Model.EmailEmpleado</h4>
+    <h4>Seguro: @Model.SeguroEmpleado</h4>
+    <h4>Fecha Ingreso: @Model.FechaIngreso.ToShortDateString()</h4>
+    <h4>Salario: @Model.Salario</h4>
+   
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdEmpleado" />
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button> |
+    <a asp-action="Index">Cancelar</a>
+</form>

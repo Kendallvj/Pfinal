@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Finalpro.Models.Tratamientos>
+
+<h1>Listado de Tratamientos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Fecha de Inicio</th>
+            <th>Descripción del Tratamiento</th>
+            <th>Costo del Tratamiento</th>
+            <th>Estado del Tratamiento</th>
+            <th>Tipo de Tratamiento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tratamiento in Model)
+        {
+            <tr>
+                <td>@tratamiento.IdTratamiento</td>
+                <td>@tratamiento.FechaInicio.ToShortDateString()</td>
+                <td>@tratamiento.DescripTratamiento</td>
+                <td>@tratamiento.CostoTratamiento</td>
+                <td>@tratamiento.EstadoTratamiento</td>
+                <td>@tratamiento.TipoTratamiento</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@tratamiento.IdTratamiento">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@tratamiento.IdTratamiento">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@tratamiento.IdTratamiento">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

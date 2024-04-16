@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Finalpro.Models.Citas>
+
+<h1>Listado de Citas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Id Paciente</th>
+            <th>Fecha Cita</th>
+            <th>Tipo Cita</th>
+            <th>Médico Asignado</th>
+            <th>Área Cita</th>
+            <th>Seguro Paciente</th>
+            <th>Requisitos Cita</th>
+            <th>Notas Adicionales</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cita in Model)
+        {
+            <tr>
+                <td>@cita.IdCita</td>
+                <td>@cita.IdPaciente</td>
+                <td>@cita.FechaCita.ToShortDateString()</td>
+                <td>@cita.TipoCita</td>
+                <td>@cita.MedicoAsignado</td>
+                <td>@cita.AreaCita</td>
+                <td>@cita.SeguroPaciente</td>
+                <td>@cita.RequisitosCita</td>
+                <td>@cita.NotasAdicionales</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@cita.IdCita">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@cita.IdCita">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@cita.IdCita">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

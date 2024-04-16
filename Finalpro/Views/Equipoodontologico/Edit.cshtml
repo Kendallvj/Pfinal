@@ -1,0 +1,20 @@
+﻿@model Finalpro.Models.EquipoOdontologico
+
+<h1>Editar Equipo Odontológico</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="IdEquipoOdonto" />
+
+    <div class="form-group">
+        <label>Nombre Material</label>
+        <input type="text" class="form-control" asp-for="NombreMaterial" />
+    </div>
+    <div class="form-group">
+        <label>Id Proveedor</label>
+        <input type="text" class="form-control" asp-for="IdProveedor" />
+    </div>
+  
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
+

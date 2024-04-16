@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Finalpro.Models.Facturas>
+
+<h1>Listado de Facturas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Id Pago</th>
+            <th>Id Paciente</th>
+            <th>Fecha Factura</th>
+            <th>Nombre Paciente</th>
+            <th>Tipo Cita</th>
+            <th>Médico Asignado</th>
+            <th>Área Cita</th>
+            <th>Seguro Paciente</th>
+            <th>Requisitos Cita</th>
+            <th>Notas Adicionales</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var factura in Model)
+        {
+            <tr>
+                <td>@factura.IdFactura</td>
+                <td>@factura.IdPago</td>
+                <td>@factura.IdPaciente</td>
+                <td>@factura.FechaFactura.ToShortDateString()</td>
+                <td>@factura.NombrePaciente</td>
+                <td>@factura.TipoCita</td>
+                <td>@factura.MedicoAsignado</td>
+                <td>@factura.AreaCita</td>
+                <td>@factura.SeguroPaciente</td>
+                <td>@factura.RequisitosCita</td>
+                <td>@factura.NotasAdicionales</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@factura.IdFactura">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@factura.IdFactura">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@factura.IdFactura">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

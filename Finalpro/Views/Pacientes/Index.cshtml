@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Finalpro.Models.Pacientes>
+
+<h1>Listado de Pacientes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Tipo Sanguíneo</th>
+            <th>Alergias</th>
+            <th>Género</th>
+            <th>Domicilio</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Número de Emergencia</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var paciente in Model)
+        {
+            <tr>
+                <td>@paciente.IdPaciente</td>
+                <td>@paciente.NombrePaciente</td>
+                <td>@paciente.ApellidoPaciente</td>
+                <td>@paciente.FechaNacimiento.ToShortDateString()</td>
+                <td>@paciente.TipoSanguineo</td>
+                <td>@paciente.Alergias</td>
+                <td>@paciente.GeneroPaciente</td>
+                <td>@paciente.DomicilioPaciente</td>
+                <td>@paciente.TelefonoPaciente</td>
+                <td>@paciente.EmailPaciente</td>
+                <td>@paciente.NumeroEmergencia</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@paciente.IdPaciente">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@paciente.IdPaciente">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@paciente.IdPaciente">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

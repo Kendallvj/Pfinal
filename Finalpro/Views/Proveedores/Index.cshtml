@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Finalpro.Models.Proveedores>
+
+<h1>Listado de Proveedores</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Dirección</th>
+            <th>Fecha Contrato</th>
+            <th>Sueldo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var proveedor in Model)
+        {
+            <tr>
+                <td>@proveedor.IdProveedor</td>
+                <td>@proveedor.NombreProveedor</td>
+                <td>@proveedor.TelefonoProveedor</td>
+                <td>@proveedor.EmailProveedor</td>
+                <td>@proveedor.DireccionProveedor</td>
+                <td>@proveedor.FechaContrato.ToShortDateString()</td>
+                <td>@proveedor.SueldoProv</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@proveedor.IdProveedor">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@proveedor.IdProveedor">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@proveedor.IdProveedor">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

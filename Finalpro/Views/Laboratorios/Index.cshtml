@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Finalpro.Models.Laboratorio>
+
+<h1>Listado de Laboratorios</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Encargado de Área</th>
+            <th>Id Equipo Odontológico</th>
+            <th>Tipo de Análisis</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var laboratorio in Model)
+        {
+            <tr>
+                <td>@laboratorio.IdLaboratorio</td>
+                <td>@laboratorio.NombreLab</td>
+                <td>@laboratorio.DireccionLab</td>
+                <td>@laboratorio.TelefonoLab</td>
+                <td>@laboratorio.EmailLab</td>
+                <td>@laboratorio.EncargadoArea</td>
+                <td>@laboratorio.IdEquipoOdonto</td>
+                <td>@laboratorio.TipoAnalisis</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@laboratorio.IdLaboratorio">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@laboratorio.IdLaboratorio">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@laboratorio.IdLaboratorio">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,18 @@
+﻿@model Finalpro.Models.Pagos
+
+<h1>Confirmar Eliminación</h1>
+
+<div>
+    <h4>Id: @Model.IdPago</h4>
+    <h4>Id Cita: @Model.IdCita</h4>
+    <h4>Fecha de Pago: @Model.FechaPago.ToShortDateString()</h4>
+    <h4>Monto: @Model.MontoPago</h4>
+    <h4>Método de Pago: @Model.MetodoPago</h4>
+    <h4>Descripción: @Model.Descripcion</h4>
+    
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdPago" />
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button> |
+    <a asp-action="Index">Cancelar</a>
+</form>

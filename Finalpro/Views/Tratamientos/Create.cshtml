@@ -1,0 +1,16 @@
+﻿@model Finalpro.Models.Tratamientos
+
+<h1>Nuevo Tratamiento</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label>Fecha de Inicio</label>
+        <input type="date" class="form-control" asp-for="FechaInicio" />
+    </div>
+    <div class="form-group">
+        <label>Descripción del Tratamiento</label>
+        <input type="text" class="form-control" asp-for="DescripTratamiento" />
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

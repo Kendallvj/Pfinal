@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Finalpro.Models.Pagos>
+
+<h1>Listado de Pagos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Id Cita</th>
+            <th>Fecha de Pago</th>
+            <th>Monto</th>
+            <th>Método de Pago</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pago in Model)
+        {
+            <tr>
+                <td>@pago.IdPago</td>
+                <td>@pago.IdCita</td>
+                <td>@pago.FechaPago.ToShortDateString()</td>
+                <td>@pago.MontoPago</td>
+                <td>@pago.MetodoPago</td>
+                <td>@pago.Descripcion</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@pago.IdPago">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@pago.IdPago">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@pago.IdPago">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

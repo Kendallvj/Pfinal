@@ -1,0 +1,16 @@
+﻿@model Finalpro.Models.SeguroDental
+
+<h1>Editar Seguro Dental</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="IdSeguro" />
+
+    <div class="form-group">
+        <label>Nombre Seguro</label>
+        <input type="text" class="form-control" asp-for="NombreSeguro" />
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
+

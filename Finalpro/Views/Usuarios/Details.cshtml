@@ -1,0 +1,14 @@
+﻿@model Finalpro.Models.usuarios
+
+<h1>Detalles de Usuario</h1>
+
+<div>
+    <h4>Id: @Model.IdUsuario</h4>
+    <h4>Usuario: @Model.Usuario</h4>
+    <h4>Contraseña: @Model.Contraseña</h4>
+    <h4>Fecha de Creación: @Model.FechaCreacion.ToShortDateString()</h4>
+    
+</div>
+<p>
+    <a asp-action="Index">Volver al Listado</a>
+</p>

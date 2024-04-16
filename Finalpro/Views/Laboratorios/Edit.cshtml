@@ -1,0 +1,15 @@
+﻿@model Finalpro.Models.Laboratorio
+
+<h1>Editar Laboratorio</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="IdLaboratorio" />
+
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" asp-for="NombreLab" />
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>

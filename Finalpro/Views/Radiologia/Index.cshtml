@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Finalpro.Models.Radiologia>
+
+<h1>Listado de Radiología</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre Paciente</th>
+            <th>Edad Paciente</th>
+            <th>Fecha Radiología</th>
+            <th>Área Radiografía</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var radiologia in Model)
+        {
+            <tr>
+                <td>@radiologia.IdRadiologia</td>
+                <td>@radiologia.NombrePaciente</td>
+                <td>@radiologia.EdadPaciente</td>
+                <td>@radiologia.FechaRadiologia.ToShortDateString()</td>
+                <td>@radiologia.AreaRadiograf</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@radiologia.IdRadiologia">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@radiologia.IdRadiologia">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@radiologia.IdRadiologia">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

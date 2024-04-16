@@ -1,0 +1,23 @@
+﻿@model Finalpro.Models.Facturas
+
+<h1>Confirmar Eliminación</h1>
+
+<div>
+    <h4>Id: @Model.IdFactura</h4>
+    <h4>Id Pago: @Model.IdPago</h4>
+    <h4>Id Paciente: @Model.IdPaciente</h4>
+    <h4>Fecha Factura: @Model.FechaFactura.ToShortDateString()</h4>
+    <h4>Nombre Paciente: @Model.NombrePaciente</h4>
+    <h4>Tipo Cita: @Model.TipoCita</h4>
+    <h4>Médico Asignado: @Model.MedicoAsignado</h4>
+    <h4>Área Cita: @Model.AreaCita</h4>
+    <h4>Seguro Paciente: @Model.SeguroPaciente</h4>
+    <h4>Requisitos Cita: @Model.RequisitosCita</h4>
+    <h4>Notas Adicionales: @Model.NotasAdicionales</h4>
+
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdFactura" />
+    <button type="submit" class="btn btn-danger">Confirmar Eliminación</button> |
+    <a asp-action="Index">Cancelar</a>
+</form>

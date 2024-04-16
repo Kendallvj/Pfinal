@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Finalpro.Models.EquipoOdontologico>
+
+<h1>Listado de Equipos Odontológicos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre Material</th>
+            <th>Id Proveedor</th>
+            <th>Cantidad Stock</th>
+            <th>Estado Equipo</th>
+            <th>Fecha Adquisición</th>
+            <th>Costo</th>
+            <th>Área Equipo</th>
+            <th>Último Mantenimiento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var equipo in Model)
+        {
+            <tr>
+                <td>@equipo.IdEquipoOdonto</td>
+                <td>@equipo.NombreMaterial</td>
+                <td>@equipo.IdProveedor</td>
+                <td>@equipo.CantidadStock</td>
+                <td>@equipo.EstadoEquipo</td>
+                <td>@equipo.FechaAdquisicion.ToShortDateString()</td>
+                <td>@equipo.Costo</td>
+                <td>@equipo.AreaEquipo</td>
+                <td>@equipo.UltimoMantenimiento.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@equipo.IdEquipoOdonto">Detalles</a> |
+                    <a asp-action="Edit" asp-route-id="@equipo.IdEquipoOdonto">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@equipo.IdEquipoOdonto">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

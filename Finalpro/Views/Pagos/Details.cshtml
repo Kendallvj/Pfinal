@@ -1,0 +1,16 @@
+﻿@model Finalpro.Models.Pagos
+
+<h1>Detalles del Pago</h1>
+
+<div>
+    <h4>Id: @Model.IdPago</h4>
+    <h4>Id Cita: @Model.IdCita</h4>
+    <h4>Fecha de Pago: @Model.FechaPago.ToShortDateString()</h4>
+    <h4>Monto: @Model.MontoPago</h4>
+    <h4>Método de Pago: @Model.MetodoPago</h4>
+    <h4>Descripción: @Model.Descripcion</h4>
+    
+</div>
+<p>
+    <a asp-action="Index">Volver al Listado</a>
+</p>

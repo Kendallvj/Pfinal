@@ -1,0 +1,15 @@
+﻿@model Finalpro.Models.Pagos
+
+<h1>Editar Pago</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="IdPago" />
+
+    <div class="form-group">
+        <label>Id Cita</label>
+        <input type="number" class="form-control" asp-for="IdCita" />
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
